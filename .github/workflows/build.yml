@@ -33,5 +33,5 @@ jobs:
         run: cd .. && ./toolchain/avr32-clone-all.sh
 
       # Runs a set of commands using the runners shell
-      #- name: Build toolchain
-      #  run: cd .. && ./avr32-toolchain/build-all.sh
+      - name: Build toolchain
+        run: cd ../toolchain && ./build-all.sh
