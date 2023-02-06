@@ -24,11 +24,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      
+      - name: Rename repo
+        run: cd $GITHUB_WORKSPACE && mv avr32-toolchain toolchain
 
       # Runs a single command using the runners shell
       - name: Clone dependencies
-        run: cd .. && ./avr32-toolchain/avr32-clone-all.sh
+        run: cd $GITHUB_WORKSPACE && ./toolchain/avr32-clone-all.sh
 
       # Runs a set of commands using the runners shell
-      - name: Build toolchain
-        run: cd .. && ./avr32-toolchain/build-all.sh
+      #- name: Build toolchain
+      #  run: cd .. && ./avr32-toolchain/build-all.sh
