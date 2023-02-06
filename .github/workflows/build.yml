@@ -26,11 +26,11 @@ jobs:
       - uses: actions/checkout@v3
       
       - name: Rename repo
-        run: cd $GITHUB_WORKSPACE && mv avr32-toolchain toolchain
+        run: cd .. && cp -r avr32-toolchain toolchain
 
       # Runs a single command using the runners shell
       - name: Clone dependencies
-        run: cd $GITHUB_WORKSPACE && ./toolchain/avr32-clone-all.sh
+        run: cd .. && ./toolchain/avr32-clone-all.sh
 
       # Runs a set of commands using the runners shell
       #- name: Build toolchain
